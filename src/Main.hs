@@ -20,7 +20,9 @@ able to execute.
 mkYesodDispatch "App" resourcesApp
 
 main :: IO ()
-main = warpEnv App
+main = do
+    static <- static "static"
+    warpEnv $ App static
 
 {-
 

@@ -16,5 +16,7 @@ import           Language.Haskell.TH
 import           Yesod               as X
 import           Yesod.Default.Util
 import           Yesod.Form.Jquery   as X (urlJqueryJs)
+import           Yesod.Static        as X
+
 widgetFile :: FilePath -> ExpQ
 widgetFile = widgetFileReload def

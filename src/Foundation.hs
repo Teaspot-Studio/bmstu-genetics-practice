@@ -3,6 +3,7 @@ module Foundation where
 import           Yesod
 import           Yesod.Default.Util
 import           Yesod.Form.Jquery
+import           Yesod.Static
 
 {-
 
@@ -15,7 +16,9 @@ our datatype is very simplistic. By convention, we call this datatype "App" with
 a single data constructor, also called "App".
 
 -}
-data App = App
+data App = App {
+    getStatic :: Static
+}
 
 {-
 
@@ -53,4 +56,5 @@ mkYesodData "App" [parseRoutes|
 /         HomeR     GET
 /markdown MarkdownR PUT
 /fib/#Int FibR      GET
+/static   StaticR   Static getStatic
 |]
